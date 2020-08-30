@@ -1,0 +1,36 @@
+Introduction to git
+
+Git is a distributed version control system that differs from the rest in the way it models your data. Most other systems store information as a list of changes to files, whereas Git models its data more as a set of snapshots of a mini file system.
+
+Traditional Distributed Systems Data Model
+
+Git Data Model
+The three states
+
+Git has three main states in which your files can be found: committed, modified, and staged. Committed means that the data is safely stored in your local database. Modified means that you have modified the file but have not yet committed it to your database. Ready means that you have marked a modified file in its current version to go in your next commit.
+
+This brings us to the three main sections of a Git project: the Git directory, the working directory, and the staging area.
+
+Working directory, staging area, and Git directory
+Distributed workflows with git
+
+We have seen what a distributed version control environment consists of, but beyond simple definition, there is more than one way to manage repositories. These are the most common workflows in Git.
+Centralized Workflow
+
+There is a single repository or central point that stores the code and everyone synchronizes their work with it. If two developers clone from the central point, and they both make changes; only the first of them to send their changes back will be able to do it cleanly. The second developer must previously merge his work with that of the first, before sending it, to avoid overwriting the changes of the first
+
+Centralized Workflow
+IntegrationManager Workflow
+
+By enabling multiple remote repositories, Git makes it possible to have a workflow where each developer has write access to their own public repository and read access to everyone else's repositories. This scenario usually includes a canonical repository, which is the "official" representative of the project.
+
+IntegrationManager Workflow
+
+Info
+
+This model became very fashionable as a result of the GitHub forging that will be seen later.
+Workflow with Dictator and Lieutenants
+
+It is a variant of the workflow with multiple repositories. It is generally used in very large projects, with hundreds of collaborators. A well-known example is the Linux kernel. Integration managers take care of specific parts of the repository; they are called lieutenants. All lieutenants report to an integration manager, known as the benevolent dictator. The benevolent dictator's repository is the reference repository, from which all contributors are pulled.
+
+Workflow with Dictator and Lieutenants
